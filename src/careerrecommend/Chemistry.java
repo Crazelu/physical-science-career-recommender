@@ -17,7 +17,11 @@ public class Chemistry {
         scan = new Scanner(System.in);
     }
 
-    public ArrayList<String> level1() { 
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their first year of study
+     ***/
+    private ArrayList<String> level1() { 
 
         point = 0;
 
@@ -50,7 +54,11 @@ public class Chemistry {
         return favouriteCourses;
     }
 
-    public ArrayList<String> level2() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their second year of study
+     ***/
+    private ArrayList<String> level2() {
 
         point = 0;
 
@@ -89,8 +97,12 @@ public class Chemistry {
 
         return favouriteCourses;
     }
-
-    public ArrayList<String> level3() {
+    
+     /***
+     * @return list of user's favourite courses if user is
+     * currently in their third year of study
+     ***/
+    private ArrayList<String> level3() {
 
         point = 0;
 
@@ -134,7 +146,11 @@ public class Chemistry {
         return favouriteCourses;
     }
 
-    public ArrayList<String> level4() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their fourth year of study
+     ***/
+    private ArrayList<String> level4() {
 
         point = 0;
 
@@ -179,7 +195,13 @@ public class Chemistry {
         return favouriteCourses;
     }
 
+    /***
+     * @param level user's current year of study
+     * @return list of user's favourite courses 
+     * given user's current year of study (@param level)
+     ***/
     public ArrayList<String> getFavouriteCourses(int level) {
+        
         ArrayList<String> favouriteCourses = new ArrayList<>();
 
         switch (level) {

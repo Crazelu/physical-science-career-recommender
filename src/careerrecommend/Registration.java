@@ -20,39 +20,50 @@ public class Registration {
     private int level;
     private int num;
 
+    /***
+     * Registers new user
+     * @return true if registration was successful, otherwise false
+     ***/
     public boolean register() {
 
-        ArrayList<String> departments = new ArrayList<>();
-        departments.add("(1) Computer Science");
-        departments.add("(2) Statistics");
-        departments.add("(3) Mathematics");
-        departments.add("(4) Geology");
-        departments.add("(5) Physics and Astronomy");
-        departments.add("(6) Science Laboratory Technology");
-        departments.add("(7) Pure and Industrial Chemistry");
+        try {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter full name:");
-        this.userName = scan.nextLine();
-        System.out.println("Enter reg number:");
-        this.regNum = scan.nextLine();
-        System.out.println("Enter department:");
-        departments.forEach((course) -> {
-            System.out.println(course);
-        });
+            ArrayList<String> departments = new ArrayList<>();
+            departments.add("(1) Computer Science");
+            departments.add("(2) Statistics");
+            departments.add("(3) Mathematics");
+            departments.add("(4) Geology");
+            departments.add("(5) Physics and Astronomy");
+            departments.add("(6) Science Laboratory Technology");
+            departments.add("(7) Pure and Industrial Chemistry");
 
-        this.num = scan.nextInt();
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter full name:");
+            this.userName = scan.nextLine();
+            System.out.println("Enter reg number:");
+            this.regNum = scan.nextLine();
+            System.out.println("Enter department:");
+            departments.forEach((course) -> {
+                System.out.println(course);
+            });
 
-        System.out.println("Enter year of study:");
-        this.level = scan.nextInt();
+            this.num = scan.nextInt();
 
-        return true;
+            System.out.println("Enter year of study:");
+            this.level = scan.nextInt();
+
+            return true;
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+
     }
 
-    public String getName() {
-        return this.userName;
-    }
-
+    /***
+     * @return user's department
+     ***/
     public String getDepartment() {
 
         switch (num) {
@@ -91,6 +102,9 @@ public class Registration {
         return this.department.toLowerCase();
     }
 
+    /**
+     * @return integer representing user's current year of study
+     ***/
     public int getLevel() {
         return this.level;
     }
@@ -116,6 +130,9 @@ public class Registration {
 
     }
 
+    /***
+     * Prints welcome message with user's name
+     ***/
     public void welcome() {
         System.out.println("+==================================================================================+");
         System.out.println("+                                                                                  +");

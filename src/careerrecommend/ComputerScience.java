@@ -17,7 +17,11 @@ public class ComputerScience {
         scan = new Scanner(System.in);
     }
 
-    public ArrayList<String> level1() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their first year of study
+     ***/
+    private ArrayList<String> level1() {
 
         point = 0;
         
@@ -50,7 +54,11 @@ public class ComputerScience {
 
     }
 
-    public ArrayList<String> level2() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their second year of study
+     ***/
+    private ArrayList<String> level2() {
         point = 0;
         
         
@@ -88,7 +96,11 @@ public class ComputerScience {
 
     }
 
-    public ArrayList<String> level3() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their third year of study
+     ***/
+    private ArrayList<String> level3() {
         point = 0;
         
         String[] courseList = new String[]{"MTH 111 ELEMENTARY MATHEMATICS 1", "MTH 121 ELEMENTARY MATHEMATICS 2", "STA 131 INFERENCE",
@@ -127,7 +139,11 @@ public class ComputerScience {
 
     }
 
-    public ArrayList<String> level4() {
+    /***
+     * @return list of user's favourite courses if user is
+     * currently in their fourth year of study
+     ***/
+    private ArrayList<String> level4() {
         point = 0;
         
         String[] courseList = new String[]{"MTH 111 ELEMENTARY MATHEMATICS 1", "MTH 121 ELEMENTARY MATHEMATICS 2", "STA 131 INFERENCE",
@@ -172,6 +188,11 @@ public class ComputerScience {
 
     }
 
+    /***
+     * @param level user's current year of study
+     * @return list of user's favourite courses 
+     * given user's current year of study (@param level)
+     ***/
     public ArrayList<String> getFavouriteCourses(int level) {
         ArrayList<String> favouriteCourses = new ArrayList<>();
        switch( level){
