@@ -80,11 +80,10 @@ public class RecommendationHandler {
             }
         }
     }
-    
-    
-    public void getChemistryCareerRecommendation(ArrayList<String> userFavouriteCourses){
-        
-        String [] chemCareers = new String[]{"Analytical Chemistry", "Food Science", "Geochemistry", "Forensic Science", "Material Science",
+
+    public void getChemistryCareerRecommendation(ArrayList<String> userFavouriteCourses) {
+
+        String[] chemCareers = new String[]{"Analytical Chemistry", "Food Science", "Geochemistry", "Forensic Science", "Material Science",
             "Scientific Laboratory Technician", "Nanotechnology"};
 
         //Create hashmap that maps careers to relevant courses
@@ -95,16 +94,13 @@ public class RecommendationHandler {
         careerToCoursesMap.put("Forensic Science", new String[]{});
         careerToCoursesMap.put("Material Science", new String[]{});
         careerToCoursesMap.put("Scientific Laboratory Technician", new String[]{});
-        careerToCoursesMap.put( "Nanotechnology", new String[]{});
-        
-        
-         getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, chemCareers);
-        
+        careerToCoursesMap.put("Nanotechnology", new String[]{});
+
+        getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, chemCareers);
+
     }
 
     public void getComputerScienceCareerRecommendation(ArrayList<String> userFavouriteCourses) {
-
-       
 
         //Create hashmap that maps careers to relevant courses
         HashMap careerToCoursesMap = new HashMap();
@@ -127,22 +123,19 @@ public class RecommendationHandler {
 
         String[] compScienceCareers = new String[]{"Software Engineering", "Product Design", "Data Science", "Data Analysis", "Database Administration",
             "Cryptography", "Computer and Information Research", "Machine Learning Engineering & Artificial Intelligence"};
-        
-        
+
         getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, compScienceCareers);
 
-          }
-    
-    
-    private void getCareerRecommendation(ArrayList<String> userFavouriteCourses, HashMap careerToCoursesMap, String[] careerList ){
-      try {
+    }
+
+    private void getCareerRecommendation(ArrayList<String> userFavouriteCourses, HashMap careerToCoursesMap, String[] careerList) {
+        try {
 
             //loop through each entry of careerToCoursesMap
             //and check if course code corresponds to course codes in the list
             //if it corresponds, adds mapped career to careersToRecommed
-            
-             ArrayList<String> careersToRecommed = new ArrayList<>();
-            
+            ArrayList<String> careersToRecommed = new ArrayList<>();
+
             userFavouriteCourses.forEach((String course) -> {
                 for (int i = 0; i < careerList.length; i++) {
                     String[] courseCodes = (String[]) careerToCoursesMap.get(careerList[i]);
@@ -179,10 +172,10 @@ public class RecommendationHandler {
 
             }
 
-            System.out.println("Your recommended career is " + recommendedCareer);
+            System.out.println("\nYour recommended career is " + recommendedCareer);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-        
-}
+
+    }
 }

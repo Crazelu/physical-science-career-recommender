@@ -15,8 +15,7 @@ public class CareerRecommend {
     }
 
     void run() {
-        
-        
+
         String dept;
         RecommendationHandler recommendationHandler = new RecommendationHandler();
         Registration registrationHandler = new Registration();
