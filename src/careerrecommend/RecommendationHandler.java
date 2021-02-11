@@ -6,7 +6,6 @@
 package careerrecommend;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -83,18 +82,40 @@ public class RecommendationHandler {
 
     public void getChemistryCareerRecommendation(ArrayList<String> userFavouriteCourses) {
 
-        String[] chemCareers = new String[]{"Analytical Chemistry", "Food Science", "Geochemistry", "Forensic Science", "Material Science",
-            "Scientific Laboratory Technician", "Nanotechnology"};
+        String[] chemCareers = new String[]{"Chemical Analysis", "Food Science", "Geochemistry", "Forensic Science", "Material Science",
+            "Scientific Laboratory Technician", "Nanotechnology", "Petroleum Engineering",
+            "Chemical Manufacturing", "Pharmacology", "Biotechnology"};
 
         //Create hashmap that maps careers to relevant courses
         HashMap careerToCoursesMap = new HashMap();
-        careerToCoursesMap.put("Analytical Chemistry", new String[]{});
-        careerToCoursesMap.put("Food Science", new String[]{});
-        careerToCoursesMap.put("Geochemistry", new String[]{});
-        careerToCoursesMap.put("Forensic Science", new String[]{});
-        careerToCoursesMap.put("Material Science", new String[]{});
-        careerToCoursesMap.put("Scientific Laboratory Technician", new String[]{});
-        careerToCoursesMap.put("Nanotechnology", new String[]{});
+
+        careerToCoursesMap.put("Chemical Analysis", new String[]{"CHM_431", "CHM_314", "CHM_152", "MTH_111",
+            "MTH_121", "CHM_322", "CMH_374", "CHM_211", "CHM_101"});
+
+        careerToCoursesMap.put("Food Science", new String[]{"BCH_201", "CHM_152", "CHM_352"});
+
+        careerToCoursesMap.put("Geochemistry", new String[]{"GEO_103", "CHM_381", "CHM_272", "CHM_314", "PHY_251", "CHM_211"});
+
+        careerToCoursesMap.put("Forensic Science", new String[]{"BCH_201", "CHM_314", "PHM_241", "CHM_322", "CHM_352"});
+
+        careerToCoursesMap.put("Pharmacology", new String[]{"BCH_201", "CHM_314", "PHM_241"});
+
+        careerToCoursesMap.put("Biotechnology", new String[]{"BCH_201", "CHM_314", "PHM_241", "BIO_151", "CHM_322"});
+
+        careerToCoursesMap.put("Material Science", new String[]{"CHM_272", "CHM_152", "MTH_111", "MTH_121", "PHY_115", "CHM_211", "CHM_101"});
+
+        careerToCoursesMap.put("Scientific Laboratory Technician", new String[]{"CHM_351", "COS_201",
+            "CHM_431", "CHM_314", "PHY_251", "CHM_101"});
+
+        careerToCoursesMap.put("Nanotechnology", new String[]{"CHM_122", "CHM_101", "CHM_273", "CHM_201",
+            "CHM_431", "PHY_262", "CHM_272", "CHM_314", "PHY_118", "PHY_251", "MTH_111", "MTH_121", "CMH_374",
+            "CHM_352", "CHM_101"});
+
+        careerToCoursesMap.put("Chemical Manufacturing", new String[]{"CHM_314", "CHM_321", "CHM_322", "CHM_431",
+            "CHM_152", "MTH_111", "MTH_121", "CHM_352", "CHM_211", "CHM_101"});
+
+        careerToCoursesMap.put("Petroleum Engineering", new String[]{"CHM_314", "CHM_321", "CHM_381", "CHM_322",
+            "CHM_431", "CHM_152", "MTH_111", "MTH_121", "CHM_352", "CHM_211", "CHM_101"});
 
         getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, chemCareers);
 
@@ -172,7 +193,11 @@ public class RecommendationHandler {
 
             }
 
-            System.out.println("\nYour recommended career is " + recommendedCareer);
+            if (recommendedCareer.isEmpty()) {
+                System.out.println("\nThere's no recommendation for you at the moment. Check again.");
+            } else {
+                System.out.println("\nYour recommended career is " + recommendedCareer);
+            }
         } catch (Exception e) {
             System.out.println(e.toString());
         }
