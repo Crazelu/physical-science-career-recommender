@@ -45,6 +45,7 @@ public class CareerRecommend {
                 case "pure and industrial chemistry":
                     favouriteCourses = chem.getFavouriteCourses(level);
                     if (!favouriteCourses.isEmpty()) {
+                        recommendationHandler.getChemistryCareerRecommendation(favouriteCourses);
                     }
                     break;
                 default:
