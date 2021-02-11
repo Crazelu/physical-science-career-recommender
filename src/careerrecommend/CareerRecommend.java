@@ -8,7 +8,11 @@ import java.util.ArrayList;
  */
 public class CareerRecommend {
 
-    ArrayList<String> favouriteCourses = new ArrayList<>();
+    ArrayList<String> favouriteCourses;
+
+    CareerRecommend() {
+        favouriteCourses = new ArrayList<>();
+    }
 
     public static void main(String[] args) {
         new CareerRecommend().run();
@@ -16,15 +20,22 @@ public class CareerRecommend {
 
     void run() {
 
-        String dept;
+        String department;
+
+        //create instances of the objects needed
         RecommendationHandler recommendationHandler = new RecommendationHandler();
         Registration registrationHandler = new Registration();
         ComputerScience compsci = new ComputerScience();
         Chemistry chem = new Chemistry();
-        registrationHandler.register();
-        dept = registrationHandler.getDepartment();
 
-        if (!registrationHandler.isInPhyScience(dept)) {
+        //register user
+        registrationHandler.register();
+
+        //get user's department
+        department = registrationHandler.getDepartment();
+
+        if (!registrationHandler.isInPhyScience(department)) {
+            //department is not in physical sciences
         } else {
 
             //show welcome message
@@ -33,7 +44,9 @@ public class CareerRecommend {
             //get user's current level
             int level = registrationHandler.getLevel();
 
-            switch (dept) {
+            //for corresponding department, get favouriteCourses and 
+            //recommend career based on those favouriteCourses selected
+            switch (department) {
                 case "computer science":
 
                     favouriteCourses = compsci.getFavouriteCourses(level);
@@ -42,12 +55,14 @@ public class CareerRecommend {
                         recommendationHandler.getComputerScienceCareerRecommendation(favouriteCourses);
                     }
                     break;
+
                 case "pure and industrial chemistry":
                     favouriteCourses = chem.getFavouriteCourses(level);
                     if (!favouriteCourses.isEmpty()) {
                         recommendationHandler.getChemistryCareerRecommendation(favouriteCourses);
                     }
                     break;
+
                 default:
                     System.out.println("We'll soon treat your department.");
                     break;

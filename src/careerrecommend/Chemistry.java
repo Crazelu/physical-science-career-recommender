@@ -17,7 +17,7 @@ public class Chemistry {
         scan = new Scanner(System.in);
     }
 
-    public ArrayList<String> level1() {
+    public ArrayList<String> level1() { 
 
         point = 0;
 
