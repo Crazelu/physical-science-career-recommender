@@ -149,6 +149,30 @@ public class RecommendationHandler {
 
     }
 
+    //Contributed by Egwu Dominion and Onwuzama Isreal
+    public void getStatisticsCareerRecommendation(ArrayList<String> userFavouriteCourses) {
+
+        //Create hashmap that maps careers to relevant courses
+        HashMap careerToCoursesMap = new HashMap();
+        careerToCoursesMap.put("Data Science", new String[]{"COS_102", "STA_131", "STA_172", "STA_371"});
+        careerToCoursesMap.put("Data Analysis", new String[]{"STA_131", "STA_132", "MTH_111",
+            "MTH_121", "STA_205"});
+        careerToCoursesMap.put("Statistics", new String[]{"STA_131", "STA_132", "STA_205"});
+        careerToCoursesMap.put("Actuary", new String[]{"STA_132", "COS_101", "MTH_211", "STA_441"});
+        careerToCoursesMap.put("Market Research", new String[]{"STA_131", "STA_132", "STA_172", "STA_363", "STA_411"});
+        careerToCoursesMap.put("Business Analysis", new String[]{"ECO_101", "STA_363", "STA_331", "STA_172"});
+        careerToCoursesMap.put("Economics", new String[]{"ECO_101", "ECO_102", "STA_371", "STA_411", "STA_441"});
+        careerToCoursesMap.put("Database Administration", new String[]{"STA_131", "COS_104", "STA_371", "STA_321"});
+        careerToCoursesMap.put("Financial Analysis", new String[]{"STA_371", "MTH_111", "ECO_101", "COS_101"});
+        careerToCoursesMap.put("Risk Analysis", new String[]{"STA_371", "MTH_132", "STA_323", "STA_321", "STA_363"});
+
+        String[] statisticsCareers = new String[]{"Data Science", "Data Analysis", "Statistics", "Actuary", "Market Research", "Business Analysis",
+            "Economics", "Financial Analysis", "Database Administration", "Risk Analysis"};
+
+        getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, statisticsCareers);
+
+    }
+    
     private void getCareerRecommendation(ArrayList<String> userFavouriteCourses, HashMap careerToCoursesMap, String[] careerList) {
         try {
 

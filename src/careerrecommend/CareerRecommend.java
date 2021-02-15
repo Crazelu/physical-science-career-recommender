@@ -27,6 +27,7 @@ public class CareerRecommend {
         Registration registrationHandler = new Registration();
         ComputerScience compsci = new ComputerScience();
         Chemistry chem = new Chemistry();
+        Statistics statistics = new Statistics();
 
         //register user
         registrationHandler.register();
@@ -60,6 +61,12 @@ public class CareerRecommend {
                     favouriteCourses = chem.getFavouriteCourses(level);
                     if (!favouriteCourses.isEmpty()) {
                         recommendationHandler.getChemistryCareerRecommendation(favouriteCourses);
+                    }
+                    break;
+                case "statistics":
+                    favouriteCourses = statistics.getFavouriteCourses(level);
+                    if (!favouriteCourses.isEmpty()) {
+                        recommendationHandler.getStatisticsCareerRecommendation(favouriteCourses);
                     }
                     break;
 
