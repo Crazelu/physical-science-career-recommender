@@ -3,6 +3,11 @@ package careerrecommend;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *
+ * @authors Olugbemi Daniel and Maduka Raphael
+ */
+
 public class Physics {
 
     private String value;

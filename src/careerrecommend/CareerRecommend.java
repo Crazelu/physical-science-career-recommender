@@ -28,6 +28,8 @@ public class CareerRecommend {
         ComputerScience compsci = new ComputerScience();
         Chemistry chem = new Chemistry();
         Statistics statistics = new Statistics();
+        Physics physics = new Physics();
+        Mathematics mathematics = new Mathematics();
 
         //register user
         registrationHandler.register();
@@ -67,6 +69,18 @@ public class CareerRecommend {
                     favouriteCourses = statistics.getFavouriteCourses(level);
                     if (!favouriteCourses.isEmpty()) {
                         recommendationHandler.getStatisticsCareerRecommendation(favouriteCourses);
+                    }
+                    break;
+                case "physics and astronomy":
+                    favouriteCourses = physics.getFavouriteCourses(level);
+                    if (!favouriteCourses.isEmpty()) {
+                        recommendationHandler.getPhysicsCareerRecommendation(favouriteCourses);
+                    }
+                    break;
+                case "mathematics":
+                    favouriteCourses = mathematics.getFavouriteCourses(level);
+                    if (!favouriteCourses.isEmpty()) {
+                        recommendationHandler.getMathematicsCareerRecommendation(favouriteCourses);
                     }
                     break;
 

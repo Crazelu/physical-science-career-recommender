@@ -227,4 +227,35 @@ public class RecommendationHandler {
         }
 
     }
+
+
+    //Contributed by Ebiobowei Weyinmomoemi
+    public void getMathematicsCareerRecommendation(ArrayList<String> userFavouriteCourses){
+        String[] mathCareers = new String[]{"Cryptography", "Statistics", "Computer and Information Research", "Banking and Finance", 
+            "Machine Learning Engineering", "Meteorology"};
+
+        //Create hashmap that maps careers to relevant courses
+        HashMap careerToCoursesMap = new HashMap();
+
+        careerToCoursesMap.put("Cryptography", new String[]{"MTH_111", "MTH_121","MTH_122", "COS_201", "COS_101", "MTH_242", "MTH_337"});
+
+        careerToCoursesMap.put("Statistics", new String[]{"STA_205", "STA_206", "STA_111", "STA_131", "MTH_121", "MTH_111",
+            "MTH_122", "STA_112", "STA_132", "STA_211", "STA_311", "STA_321", "STA_331", "STA_312", "STA_332"});
+
+        careerToCoursesMap.put("Computer and Information Research", new String[]{"COS_101", "COS_201", "COS_333", "C0S_332", "MTH_111",
+            "MTH_121", "MTH_211", "STA_131", "STA_132", "MTH_122"});
+
+        careerToCoursesMap.put("Banking and Finance", new String[]{"MTH_111", "MTH_121", "MTH_122", "STA_131", "STA_132", "MTH_224", "MTH_341"});
+
+        careerToCoursesMap.put("Machine Learning Engineering", new String[]{"MTH_111", "MTH_221", "MTH_321", "MTH_323", "MTH_121",
+            "MTH_242", "STA_111", "STA_205"});
+        
+        careerToCoursesMap.put("Meteorology", new String[]{"MTH_111", "MTH_121", "MTH_122", "MTH_432", "MTH_438", "MTH_427",
+            "MTH_336", "MTH_338"});
+
+
+        getCareerRecommendation(userFavouriteCourses, careerToCoursesMap, mathCareers);
+    }
+
+    public void getPhysicsCareerRecommendation(ArrayList<String> userFavouriteCourses) {}
 }
